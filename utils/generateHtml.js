@@ -24,6 +24,7 @@
             `;
         };   
     }
+    
     const engineerHtml = function(engineer){
         if (engineer.getRole()=== "Engineer"){
             return`
@@ -35,7 +36,27 @@
                             <ul class="list-group">
                                 <li class="list-group-item">ID: # ${engineer.id}</li>
                                 <li class="list-group-item">Email: <a href="mailto:${engineer.email}">${engineer.email}</a></li>
-                                <li class="list-group-item">Office number: ${engineer.getGithub()}</li>
+                                <li class="list-group-item">Github: ${engineer.getGithub()}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `
+        }
+    }
+
+    const internHtml = function(intern){
+        if (intern.getRole()=== "Intern"){
+            return`
+                <div class="col mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">${intern.name}</h5>
+                            <h6>${intern.getRole()}</h6>
+                            <ul class="list-group">
+                                <li class="list-group-item">ID: # ${intern.id}</li>
+                                <li class="list-group-item">Email: <a href="mailto:${intern.email}">${intern.email}</a></li>
+                                <li class="list-group-item">School: ${intern.getSchool()}</li>
                             </ul>
                         </div>
                     </div>
@@ -70,6 +91,7 @@ module.exports = team => {
     <div class="row row-cols-1 row-cols-md-3">
         ${team.map(emp=>managerHtml(emp))} 
         ${team.map(emp=> engineerHtml(emp))}
+        ${team.map(emp=> internHtml(emp))}
     </div>
 </main>
 </div>

@@ -140,6 +140,69 @@ const engineerQuestions = [
     },
 ]
 
+const internQuestions = [
+    {
+        type: "input",
+        name: "name",
+        message: "What is the intern's name? (Required)",
+        validate: nameInput => {
+            if (nameInput) {
+                return true;
+            }
+            else {
+                console.log('Please enter the information required.')
+                return false;
+            }
+        }
+
+    },
+    {
+        type: "input",
+        name: "id",
+        message: "What is the intern's ID number? (Required)",
+        validate: idInput => {
+            if (idInput) {
+                return true;
+            }
+            else {
+                console.log('Please enter the information required.')
+                return false;
+            }
+        }
+
+    },
+    {
+        type: "input",
+        name: "email",
+        message: "What is your intern's email? (Required)",
+        validate: emailInput => {
+            if (emailInput) {
+                return true;
+            }
+            else {
+                console.log('Please enter the information required.')
+                return false;
+            }
+        }
+
+    },
+    {
+        type: "input",
+        name: "school",
+        message: "What school did the intern attend? (Required)",
+        validate: schoolInput => {
+            if (schoolInput) {
+                return true;
+            }
+            else {
+                console.log('Please enter the information required.')
+                return false;
+            }
+        }
+
+    },
+]
+
 function addNew (){
     inquirer.prompt(
         {
@@ -180,6 +243,20 @@ function addEngineer (){
         //USE THE manager.(VALUE) TO ATTACH TO generateHtml.js
         let engineer = new Engineer( answers.name, answers.id, answers.email, answers.github);
         empArr.push(engineer);
+        console.log(empArr)
+        addNew();
+    }
+        
+    )
+}
+
+function addIntern (){
+    inquirer.prompt(internQuestions)
+    .then((answers) => {
+        console.table(answers);
+        //USE THE manager.(VALUE) TO ATTACH TO generateHtml.js
+        let intern = new Intern( answers.name, answers.id, answers.email, answers.school);
+        empArr.push(intern);
         console.log(empArr)
         addNew();
     }
