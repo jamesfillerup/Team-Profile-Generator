@@ -1,4 +1,33 @@
 function generateHtml(data){
+
+    // console.log(data)
+    // let cardArr = [];
+
+    // for (let index = 0; i < data.length; index++) {
+    // }
+    const managerHtml = function(manager){
+        return`
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">${manager.name}</h5>
+                        <h6>${manager.getRole()}</h6>
+                        <ul class="list-group">
+                            <li class="list-group-item">ID: # ${manager.id}</li>
+                            <li class="list-group-item">Email: <a href="mailto:james@yahoo.com">james@yahoo.com</a></li>
+                            <li class="list-group-item">Office number: ${manager.getOfficeNumber()}</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        `;
+    };
+
+
+    
+module.exports = team => {
+
+
     return`
     <!DOCTYPE html>
 <html lang="en">
@@ -9,10 +38,39 @@ function generateHtml(data){
     <title>Document</title>
 </head>
 <body>
+<div class="">
+<header class="pt-5 pl-2 p-5 bg-info">
+    <h1 class="text-center">
+        Team Profile Generator
+    </h1>
+    
+</header>
+<main class="p-5">
+    <!-- https://getbootstrap.com/docs/4.4/components/card/ -->
+    <div class="row row-cols-1 row-cols-md-3">
+        ENTER CODE GENERATOR HERE
+    </div>
+</main>
+</div>
     
 </body>
 </html>
     `
 }
 
-module.exports = generateHtml
+// module.exports = generateHtml
+
+
+// {/* <div class="col mb-4">
+//     <div class="card h-100">
+//         <div class="card-body">
+//             <h5 class="card-title">namesgoeshere</h5>
+//             <h6>status</h6>
+//             <ul class="list-group">
+//                 <li class="list-group-item">ID: # </li>
+//                 <li class="list-group-item">Email: <a href="mailto:james@yahoo.com">james@yahoo.com</a></li>
+//                 <li class="list-group-item">School: school</li>
+//             </ul>
+//         </div>
+//     </div>
+// </div> */}
