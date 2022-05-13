@@ -1,4 +1,4 @@
-function generateHtml(data){
+// function generateHtml(data){
 
     // console.log(data)
     // let cardArr = [];
@@ -6,7 +6,8 @@ function generateHtml(data){
     // for (let index = 0; i < data.length; index++) {
     // }
     const managerHtml = function(manager){
-        return`
+        if (manager.getRole() === "Manager"){
+            return`
             <div class="col mb-4">
                 <div class="card h-100">
                     <div class="card-body">
@@ -21,6 +22,8 @@ function generateHtml(data){
                 </div>
             </div>
         `;
+        }
+        
     };
 
 
@@ -48,7 +51,7 @@ module.exports = team => {
 <main class="p-5">
     <!-- https://getbootstrap.com/docs/4.4/components/card/ -->
     <div class="row row-cols-1 row-cols-md-3">
-        ENTER CODE GENERATOR HERE
+        ${team.map(emp=>managerHtml(emp))}
     </div>
 </main>
 </div>
