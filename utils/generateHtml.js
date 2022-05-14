@@ -89,9 +89,10 @@ module.exports = team => {
 <main class="p-5">
     <!-- https://getbootstrap.com/docs/4.4/components/card/ -->
     <div class="row row-cols-1 row-cols-md-3">
-        ${team.map(emp=>managerHtml(emp))} 
-        ${team.map(emp=> engineerHtml(emp))}
-        ${team.map(emp=> internHtml(emp))}
+    <!-- myArr = ['html','html2','html3'] THE .JOIN REMOVED THE COMMAS BECAUSE IT IS TRYING TO READ IT LITERALLY AND THEN PLACING COMMAS IN -->
+        ${team.map(emp=>managerHtml(emp)).join('')} 
+        ${team.map(emp=> engineerHtml(emp)).join('')}
+        ${team.map(emp=> internHtml(emp)).join("")}
     </div>
 </main>
 </div>
