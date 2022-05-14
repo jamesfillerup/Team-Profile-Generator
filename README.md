@@ -4,6 +4,8 @@
 
 This project was build to be able to build and set up teams with based on their manager. It also contains their contact information. The user would  put the information in the prompts and get and html page generated with that persons team.
 
+![Screenshot](screenshot.png)
+
 ## Table of Contents
 
 - [Installation](#installation)
